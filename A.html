@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saint Peter of Verona Academy Inc. - Enrollment Portal</title>
+  <link rel="stylesheet" href="A.css">
+</head>
+<body>
+ 
+  <div class="modal-overlay active" id="signupModal">
+    <div class="modal-container">
+      <div class="modal-logo">
+        <div class="logo-icon">
+         <img src="/DP/IMG_6259.png">
+        </div>
+        <h1>Saint Peter of Verona Academy Inc.</h1>
+        <p>Create your account to get started</p>
+      </div>
+      <form id="signupForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Create a password" required>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="submit-btn">Create Account</button>
+      </form>
+      <div class="modal-footer">
+        Already have an account? <a id="showLoginBtn">Sign in</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-container">
+      <div class="modal-logo">
+        <div class="logo-icon">
+      <img src="/DP/IMG_6259.png">
+        </div>
+        <h1>Welcome Back</h1>
+        <p>Sign in to your account</p>
+      </div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="submit-btn">Sign In</button>
+      </form>
+      <div class="modal-footer">
+        Don't have an account? <a id="showSignupBtn">Create one</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard" id="dashboard">
+  
+    <nav class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">
+     <img src="/DP/IMG_6259.png">
+        </div>
+        <h2>Saint Peter of Verona Academy Inc.</h2>
+      </div>
+      <ul class="nav-menu">
+        <li>
+          <a class="nav-link active" data-section="home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" data-section="about">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            About
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" data-section="calculator">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm-8 8H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2z"/>
+            </svg>
+            Calculator
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" data-section="enrollment">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+            Enrollment
+          </a>
+        </li>
+      </ul>
+      <div class="user-profile-btn" id="profileBtn">
+        <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=150&h=150&fit=crop" alt="Profile" id="profileImage">
+        <div class="user-info">
+          <h4 id="userDisplayName">Student</h4>
+          <p>View Profile</p>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+    
+      <section class="dashboard-section active" id="home">
+        <div class="welcome-banner animate-in">
+          <h2>Welcome to Saint Peter of Verona Academy Inc.</h2>
+          <p>Your journey to excellence begins here. Explore our programs and start your enrollment today.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card animate-item">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+            </div>
+            <h3>2,500+</h3>
+            <p>Students Enrolled</p>
+          </div>
+          <div class="stat-card animate-item">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h3>25+</h3>
+            <p>Years of Excellence</p>
+          </div>
+          <div class="stat-card animate-item">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+              </svg>
+            </div>
+            <h3>15+</h3>
+            <p>Academic Programs</p>
+          </div>
+          <div class="stat-card animate-item">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+              </svg>
+            </div>
+            <h3>98%</h3>
+            <p>Success Rate</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="about">
+        <div class="section-header">
+          <h1>About Our School</h1>
+          <p>Learn more about Saint Peter of Verona Academy Inc.</p>
+        </div>
+        <div class="about-content">
+          <div class="about-card animate-item">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              Our Mission
+            </h3>
+            <p>
+              St. Peter of Verona Academy Inc. commits itself to developing graduates empowered with academic excellence, social involvement, and Catholic values
+            </p>
+          </div>
+          <div class="about-card animate-item">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              </svg>
+              Our Vision
+            </h3>
+            <p>By 2025, St. Peter of Verona Academy Inc. is a leading basic education school in Hermosa, Bataan, recognized for its integral Catholic education, which contributes to the formation of morally, socially, and mentally proactive citizens.</p>
+          </div>
+          <div class="about-card animate-item">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              Core Values
+            </h3>
+            <ul>
+              <li>Faith and Spirituality</li>
+              <li>Academic Excellence</li>
+              <li>Integrity and Honesty</li>
+              <li>Service to Others</li>
+              <li>Respect and Compassion</li>
+            </ul>
+          </div>
+          <div class="about-card animate-item">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Contact Information
+            </h3>
+            <div class="contact-info-list">
+              <div class="contact-item">
+                <strong>Address:</strong> 123 Education Street, Learning City
+              </div>
+              <div class="contact-item">
+                <strong>Phone:</strong> (02) 123-4567
+              </div>
+              <div class="contact-item">
+                <strong>Email:</strong> info@spva.edu.ph
+              </div>
+              <div class="contact-item">
+                <strong>Hours:</strong> Monday - Friday, 7:00 AM - 5:00 PM
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="calculator">
+        <div class="section-header">
+          <h1>Calculator</h1>
+          <p>A handy tool for your calculations</p>
+        </div>
+        <div class="calculator-container">
+          <div class="calculator">
+            <div class="calc-display">
+              <input type="text" id="calcDisplay" value="0" readonly>
+            </div>
+            <div class="calc-buttons">
+              <button class="calc-btn function" data-value="C">C</button>
+              <button class="calc-btn function" data-value="CE">CE</button>
+              <button class="calc-btn function" data-value="%">%</button>
+              <button class="calc-btn operator" data-value="/">÷</button>
+              <button class="calc-btn" data-value="7">7</button>
+              <button class="calc-btn" data-value="8">8</button>
+              <button class="calc-btn" data-value="9">9</button>
+              <button class="calc-btn operator" data-value="*">×</button>
+              <button class="calc-btn" data-value="4">4</button>
+              <button class="calc-btn" data-value="5">5</button>
+              <button class="calc-btn" data-value="6">6</button>
+              <button class="calc-btn operator" data-value="-">-</button>
+              <button class="calc-btn" data-value="1">1</button>
+              <button class="calc-btn" data-value="2">2</button>
+              <button class="calc-btn" data-value="3">3</button>
+              <button class="calc-btn operator" data-value="+">+</button>
+              <button class="calc-btn function" data-value="±">±</button>
+              <button class="calc-btn" data-value="0">0</button>
+              <button class="calc-btn" data-value=".">.</button>
+              <button class="calc-btn equals" data-value="=">=</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="enrollment">
+        <div class="section-header">
+          <h1>Enrollment Form</h1>
+          <p>Fill out the form below to enroll</p>
+        </div>
+        <div class="enrollment-form-container">
+          <form class="enrollment-form" id="enrollmentForm">
+            <div class="form-section">
+              <h3>Student Information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" name="firstName" placeholder="Enter first name" required>
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="lastName" placeholder="Enter last name" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Date of Birth</label>
+                  <input type="date" name="dob" required>
+                </div>
+                <div class="form-group">
+                  <label>Gender</label>
+                  <select name="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Grade Level</label>
+                  <select name="gradeLevel" required>
+                    <option value="">Select grade level</option>
+                    <option value="kinder">Kindergarten</option>
+                    <option value="grade1">Grade 1</option>
+                    <option value="grade2">Grade 2</option>
+                    <option value="grade3">Grade 3</option>
+                    <option value="grade4">Grade 4</option>
+                    <option value="grade5">Grade 5</option>
+                    <option value="grade6">Grade 6</option>
+                    <option value="grade7">Grade 7</option>
+                    <option value="grade8">Grade 8</option>
+                    <option value="grade9">Grade 9</option>
+                    <option value="grade10">Grade 10</option>
+                    <option value="grade11">Grade 11</option>
+                    <option value="grade12">Grade 12</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Previous School</label>
+                  <input type="text" name="previousSchool" placeholder="Enter previous school">
+                </div>
+              </div>
+            </div>
+            <div class="form-section">
+              <h3>Parent/Guardian Information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Parent/Guardian Name</label>
+                  <input type="text" name="parentName" placeholder="Enter parent/guardian name" required>
+                </div>
+                <div class="form-group">
+                  <label>Relationship</label>
+                  <select name="relationship" required>
+                    <option value="">Select relationship</option>
+                    <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                    <option value="guardian">Guardian</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Contact Number</label>
+                  <input type="tel" name="contactNumber" placeholder="Enter contact number" required>
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" name="parentEmail" placeholder="Enter email address" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Home Address</label>
+                <textarea name="address" rows="3" placeholder="Enter complete home address" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit Enrollment</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="profile-overlay" id="profileOverlay"></div>
+  <div class="profile-sidebar" id="profileSidebar">
+    <div class="profile-header">
+      <h2>Profile</h2>
+      <button class="close-profile-btn" id="closeProfileBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="profile-picture-section">
+      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=150&h=150&fit=crop" alt="Profile" class="profile-picture" id="sidebarProfileImage">
+      <input type="file" id="profilePicInput" accept="image/*" style="display: none;">
+      <p class="change-photo-text">Click photo to change</p>
+    </div>
+    <div class="profile-info">
+      <div class="profile-info-item">
+        <label>Full Name</label>
+        <div class="value">
+          <span id="profileNameDisplay">Student</span>
+          <button class="edit-btn" id="editNameBtn">Edit</button>
+        </div>
+        <div class="name-edit-container" id="nameEditContainer">
+          <input type="text" id="profileNameInput" placeholder="Enter your name">
+          <button class="save-name-btn" id="saveNameBtn">Save</button>
+          <button class="cancel-name-btn" id="cancelNameBtn">Cancel</button>
+        </div>
+      </div>
+      <div class="profile-info-item">
+        <label>Account Status</label>
+        <div class="value">
+          <span>Active</span>
+        </div>
+      </div>
+      <div class="profile-info-item">
+        <label>Member Since</label>
+        <div class="value">
+          <span>2024</span>
+        </div>
+      </div>
+    </div>
+    <button class="logout-btn" id="logoutBtn">Sign Out</button>
+  </div>
+
+  <script src="A.js"></script>
+</body>
+</html>
